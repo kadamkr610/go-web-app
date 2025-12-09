@@ -1,0 +1,36 @@
+# .tekton/pipeline.yaml
+apiVersion: tekton.dev/v1
+kind: PipelineRun
+metadata:
+  name: build-pipeline
+  annotations:
+    pipelinesascode.tekton.dev/on-event: "[push]"
+    pipelinesascode.tekton.dev/on-target-branch: "[main]"
+spec:
+  pipelineSpec:
+    tasks:
+      - name: git-clone
+        taskRef:
+          resolver: bundles
+          params:
+            - name: bundle
+              # OLD reference - Renovate should update this
+              value: quay.io/redhat-appstudio-tekton-catalog/task-git-clone:0.1@sha256:abcd1234567890
+            - name: name
+              value: git-clone
+            - name: kind
+              value: task
+
+      - name: buildah
+        taskRef:
+          resolver: bundles
+          params:
+            - name: bundle
+              # OLD reference - Renovate should update this
+              value: quay.io/redhat-appstudio-tekton-catalog/task-buildah:0.1@sha256:abcd1234567890
+            - name: name
+              value: buildah
+            - name: kind
+              value: task
+        runAfter:
+          - git-clone
