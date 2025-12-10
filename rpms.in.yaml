@@ -1,0 +1,18 @@
+contentOrigin:
+  # Define the source of packages - path to your repo file
+  repofiles:
+    - ./redhat.repo
+
+packages:
+  # List of RPM packages to resolve
+  - openshift-clients
+
+arches:
+  # Architectures for which packages should be resolved
+  - aarch64
+  - x86_64
+
+# Optional: context for package resolution
+# context:
+#   image: registry.redhat.io/ubi9/ubi-minimal:latest
+#   containerfile: ./Containerfile
