@@ -1,7 +1,9 @@
 contentOrigin:
-  # Define the source of packages - path to your repo file
-  repofiles:
-    - ./redhat.repo
+  repos:
+    - repoid: ubi-9-for-${basearch}-baseos-rpms
+      baseurl: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/${basearch}/baseos/os/
+    - repoid: ubi-9-for-${basearch}-appstream-rpms
+      baseurl: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/${basearch}/appstream/os/
 
 packages:
   # List of RPM packages to resolve
