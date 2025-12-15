@@ -8,6 +8,13 @@ contentOrigin:
       baseurl: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/$basearch/appstream/os
       sslverify: 1
       priority: 1
+    - repoid: rhel-9-for-$basearch-baseos-rpms
+      baseurl: https://cdn.redhat.com/content/dist/rhel9/{version}/$basearch/baseos/os
+      varsFromContainerfile: Dockerfile
+      sslverify: 1
+      sslcacert: /etc/rhsm/ca/redhat-uep.pem
+      sslclientkey: $SSL_CLIENT_KEY
+      sslclientcert: $SSL_CLIENT_CERT
 
 packages:
   - tar         # Core utility, usually in BaseOS
@@ -15,6 +22,7 @@ packages:
   - git         # Version control, usually in AppStream
   - python3     # Scripting language runtime, usually in AppStream
   - jq          # JSON command-line processor, usually in AppStream
+  - which
 
 arches:
   # Architectures for which packages should be resolved
