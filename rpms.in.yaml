@@ -29,4 +29,4 @@ arches:
   - x86_64
 
 context:
-  image: registry.redhat.io/ubi9/ubi-minimal:latest
+  image: registry.access.redhat.com/ubi9/ubi-minimal:latest
