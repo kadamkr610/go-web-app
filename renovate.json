@@ -1,5 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "containerVulnerabilityAlerts": false,
+  "rpmVulnerabilityAlerts": false,
+  "vulnerabilityAlerts": {
+    "enabled": false
+  },
   "prHourlyLimit": 10,
   "gomod": {
     "postUpgradeTasks": {
