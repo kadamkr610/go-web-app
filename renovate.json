@@ -1,13 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "prHourlyLimit": 10,
-  "packageRules": [
-    {
-      "matchManagers": ["tekton"],
-      "postUpgradeTasks": {
+  "gomod": {
+    "postUpgradeTasks": {
         "commands": ["rpm-lockfile-prototype rpms.in.yaml"],
         "fileFilters": ["rpms.lock.yaml"]
       }
-    }
-  ]
+  }
 }

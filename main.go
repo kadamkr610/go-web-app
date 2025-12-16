@@ -3,6 +3,8 @@ package main
 import (
 	"log"
 	"net/http"
+
+	"github.com/sirupsen/logrus"
 )
 
 func homePage(w http.ResponseWriter, r *http.Request) {
@@ -26,6 +28,8 @@ func contactPage(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+
+	logrus.Info("This ensures the dependency is used.")
 
 	http.HandleFunc("/home", homePage)
 	http.HandleFunc("/courses", coursePage)
