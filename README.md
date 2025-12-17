@@ -10,7 +10,7 @@ To run the server, execute the following command:
 go run main.go
 ```
 
-The server will start on port 8080. You can access it by navigating to `http://localhost:8080/courses` in your web browser.
+The server will start on port 1234. You can access it by navigating to `http://localhost:1234/courses` in your web browser.
 
 ## Looks like this
 
