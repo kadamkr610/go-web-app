@@ -9,7 +9,7 @@ contentOrigin:
       sslverify: 1
       priority: 1
     - repoid: rhel-9-for-$basearch-baseos-rpms
-      baseurl: https://cdn.redhat.com/content/dist/rhel9/{version}/$basearch/baseos/os
+      baseurl: https://cdn.redhat.com/content/dist/rhel9/9/$basearch/baseos/os
       sslverify: 1
       sslcacert: /etc/rhsm/ca/redhat-uep.pem
       sslclientkey: $SSL_CLIENT_KEY
