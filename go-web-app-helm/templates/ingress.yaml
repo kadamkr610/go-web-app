@@ -1,12 +1,18 @@
-apiVersion: v1
-kind: Service
+{{- if .Values.ingress.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
   name: {{ include "go-web-app-helm.fullname" . }}
 spec:
-  type: {{ .Values.service.type }}
-  selector:
-    app: {{ include "go-web-app-helm.name" . }}
-  ports:
-    - protocol: TCP
-      port: {{ .Values.service.port }}
-      targetPort: {{ .Values.service.targetPort }}
+  rules:
+    - host: {{ .Values.ingress.host }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "go-web-app-helm.fullname" . }}
+                port:
+                  number: {{ .Values.service.port }}
+{{- end }}
