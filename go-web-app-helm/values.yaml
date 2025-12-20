@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: karthikeya2k24/ci-go-web-image
-  tag: "b53daa7"
+  tag: "ad56ce8"
   pullPolicy: IfNotPresent
 
 service:
