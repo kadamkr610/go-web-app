@@ -62,6 +62,7 @@ jobs:
 
   docker-build:
 
+    if: github.event_name == 'push'
     name: Build & Push Docker Image
     runs-on: ubuntu-latest
 
@@ -89,6 +90,8 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/ci-go-web-image:${{ steps.vars.outputs.IMAGE_TAG }}
 
   update-helm-values:
+  
+    if: github.event_name == 'push'
     name: Update Helm image tag
     runs-on: ubuntu-latest
 
