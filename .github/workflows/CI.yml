@@ -1,6 +1,6 @@
 # CICD using GitHub actions
 
-name: CI/CD
+name: CI
 
 # Exclude the workflow to run on changes to the helm chart
 on:
