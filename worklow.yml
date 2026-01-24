@@ -1,0 +1,19 @@
+name: Simple Addition Job
+
+on:
+  schedule:
+    # 6:30 PM CST = 00:30 UTC (next day)
+    - cron: "30 0 24 1 *"
+
+  workflow_dispatch:
+
+jobs:
+  run-addition:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run addition script
+        run: python3 add.py
