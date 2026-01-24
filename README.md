@@ -16,4 +16,4 @@ The server will start on port 8080. You can access it by navigating to `http://l
 
 ![Website](static/images/golang-website.png)
 
-
+![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/Bhanu97282/go-web-app?utm_source=oss&utm_medium=github&utm_campaign=Bhanu97282%2Fgo-web-app&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
