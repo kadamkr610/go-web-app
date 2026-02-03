@@ -8,9 +8,7 @@
   "prHourlyLimit": 10,
   "gomod": {
     "recreateWhen": "always",
-    "postUpgradeTasks": {
-      "commands": [ "rpm-lockfile-prototype rpms.in.yaml" ],
-      "fileFilters": ["rpms.lock.yaml"]
-    }
+    "automerge": true,
+    "requireTestsForPlatformAutomerge": true
   }
 }
