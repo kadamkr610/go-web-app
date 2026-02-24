@@ -1,4 +1,4 @@
-FROM golang:1.22.5 as base
+FROM golang as base
 
 WORKDIR /app
 
@@ -21,3 +21,5 @@ EXPOSE 8080
 
 CMD ["./main"]
 
+
+add 
